@@ -29,7 +29,7 @@ class App extends Component {
     console.log(prevState)
     console.log(this.state)
     if (this.state.contacts !== prevState.contacts) {
-      console.log('Refresh contacts')
+      console.log('Обновились contacts')
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
     }
   }
