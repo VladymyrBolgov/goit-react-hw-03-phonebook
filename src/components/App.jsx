@@ -24,7 +24,7 @@ class App extends Component {
       this.setState({contacts: savedContacts})
     }
   }
-
+// При обновлении приложения стадия Обновления
   componentDidUpdate(prevProps, prevState) {
     console.log(prevState)
     console.log(this.state)
