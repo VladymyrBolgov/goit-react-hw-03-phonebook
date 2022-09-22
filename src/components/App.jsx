@@ -15,6 +15,24 @@ class App extends Component {
     ],
     filter: '',
   };
+// При первой загрузке приложения - стадия Монтирования
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const savedContacts = JSON.parse(contacts);
+
+    if (savedContacts) {
+      this.setState({contacts: savedContacts})
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevState)
+    console.log(this.state)
+    if (this.state.contacts !== prevState.contacts) {
+      console.log('Refresh contacts')
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
+    }
+  }
 
   addContact = ({ name, number }) => {
     const newContact = {
