@@ -18,10 +18,10 @@ class App extends Component {
 // При первой загрузке приложения - стадия Монтирования
   componentDidMount() {
     const contacts = localStorage.getItem('contacts');
-    const savedContacts = JSON.parse(contacts);
+    const parsedContacts = JSON.parse(contacts);
 
-    if (savedContacts) {
-      this.setState({contacts: savedContacts})
+    if (parsedContacts) {
+      this.setState({contacts: parsedContacts})
     }
   }
 // При обновлении приложения стадия Обновления
